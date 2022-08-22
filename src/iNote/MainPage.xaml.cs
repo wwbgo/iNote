@@ -1,5 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-using Vanara.PInvoke;
+﻿using Vanara.PInvoke;
 using static Vanara.PInvoke.User32;
 
 namespace iNote;
@@ -23,8 +22,6 @@ public partial class MainPage : ContentPage
     }
     private async Task SetForegroundWindowCustom(HWND hwnd)
     {
-        noteEditor.Text += $"{DateTime.Now}{Environment.NewLine}";
-
         if (_isTopMost)
         {
             var result = SetWindowPos(hwnd, HWND.HWND_NOTOPMOST, 0, 0, 0, 0, SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOMOVE);
@@ -40,8 +37,6 @@ public partial class MainPage : ContentPage
         }
         else
         {
-            ForegroundBtn.Text = "置顶中...";
-
             var result = SetWindowPos(hwnd, HWND.HWND_TOPMOST, 0, 0, 0, 0, SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOMOVE);
             if (result)
             {

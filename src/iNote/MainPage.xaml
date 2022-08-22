@@ -47,7 +47,6 @@
                     MinimumHeightRequest="150" 
                     AutoSize="TextChanges" 
                     IsSpellCheckEnabled="True" />
-            <Entry x:Name="noteEntry" />
 
         </VerticalStackLayout>
     </ScrollView>
