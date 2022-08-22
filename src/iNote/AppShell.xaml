@@ -4,11 +4,43 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:iNote"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout">
+    <Shell.FlyoutHeader>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Image
+            Source="dotnet_bot.png"
+            HeightRequest="40"
+                Margin="0,0,10,0"
+            HorizontalOptions="Center" />
+            <Label Text="iNote" FontSize="Header"></Label>
+        </HorizontalStackLayout>
+    </Shell.FlyoutHeader>
+
+
+    <Shell.Items>
+        <ShellContent
+        Title="ccc"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    </Shell.Items>
 
     <ShellContent
-        Title="Home"
+        Title="aaa"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="bbb"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
+    <Shell.FlyoutFooter>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="25"
+                Margin="0,0,10,0"
+                HorizontalOptions="Center" />
+            <Label Text="power by wwb" FontSize="Micro"></Label>
+        </HorizontalStackLayout>
+    </Shell.FlyoutFooter>
 </Shell>
