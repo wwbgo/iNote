@@ -32,10 +32,7 @@
     </ContentPage.MenuBarItems>
     <ScrollView>
         <VerticalStackLayout
-            Spacing="20"
-            Padding="10"
-            HorizontalOptions="Fill"
-            VerticalOptions="Fill">
+            Spacing="20">
             <Button
                 x:Name="ForegroundBtn"
                 Text="置顶"
@@ -43,12 +40,26 @@
                 HeightRequest="45"
                 Clicked="ForegroundBtn_Clicked"
                 HorizontalOptions="Start" />
-            <Editor x:Name="noteEditor"
+
+            <Border StrokeShape="RoundRectangle 5,5,5,5">
+                <Border.Stroke>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="Orange"
+                          Offset="0.1" />
+                        <GradientStop Color="Brown"
+                          Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.Stroke>
+
+                <Editor x:Name="noteEditor"
                     MinimumHeightRequest="150" 
                     AutoSize="TextChanges" 
+                    Placeholder="请输入..."
                     IsSpellCheckEnabled="True" />
 
-        </VerticalStackLayout>
-    </ScrollView>
+            </Border>
 
+        </VerticalStackLayout>
+
+    </ScrollView>
 </ContentPage>

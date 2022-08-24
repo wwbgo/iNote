@@ -1,7 +1,4 @@
-﻿using Vanara.PInvoke;
-using static Vanara.PInvoke.User32;
-
-namespace iNote;
+﻿namespace iNote;
 
 public partial class MainPage : ContentPage
 {
@@ -14,17 +11,13 @@ public partial class MainPage : ContentPage
 
     private async void ForegroundBtn_Clicked(object sender, EventArgs e)
     {
-        var hWnd = GetActiveWindow();
-        if (!hWnd.IsNull)
-        {
-            await SetForegroundWindowCustom(hWnd);
-        }
+        await SetForegroundWindowCustom();
     }
-    private async Task SetForegroundWindowCustom(HWND hwnd)
+    private async Task SetForegroundWindowCustom()
     {
         if (_isTopMost)
         {
-            var result = SetWindowPos(hwnd, HWND.HWND_NOTOPMOST, 0, 0, 0, 0, SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOMOVE);
+            var result = WindowHelper.UnSetTopMost();
             if (result)
             {
                 _isTopMost = !_isTopMost;
@@ -37,7 +30,7 @@ public partial class MainPage : ContentPage
         }
         else
         {
-            var result = SetWindowPos(hwnd, HWND.HWND_TOPMOST, 0, 0, 0, 0, SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOMOVE);
+            var result = WindowHelper.SetTopMost();
             if (result)
             {
                 _isTopMost = !_isTopMost;

@@ -18,10 +18,7 @@
 
 
     <Shell.Items>
-        <ShellContent
-        Title="ccc"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+
     </Shell.Items>
 
     <ShellContent
@@ -29,9 +26,9 @@
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
     <ShellContent
-        Title="bbb"
+        Title="aaa1"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage1" />
 
     <Shell.FlyoutFooter>
         <HorizontalStackLayout HorizontalOptions="Center">
